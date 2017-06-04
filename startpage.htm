@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>home~</title>
+		<link rel="stylesheet" href="style.css">
+		<meta charset="utf-8">
+
+		<script type="text/javascript">
+				function startTime()
+				{
+				var today=new Date();
+				var h=today.getHours();
+				var m=today.getMinutes();
+				var s=today.getSeconds();
+				// add a zero in front of numbers<10
+				m=checkTime(m);
+				s=checkTime(s);
+				document.getElementById('time').innerHTML=h+1+":"+m+":"+s;
+				t=setTimeout('startTime()',500);
+				}
+				function checkTime(i)
+				{
+				if (i<10)
+				{
+				i="0" + i;
+				}return i;
+					}
+			</script>
+
+	</head>
+	<body onload="startTime()">
+		<div class="container">
+
+			<div id="time" style="font-size: 42pt;"></div>
+
+			<div class="favorites">
+				<div class="favorites-list">
+					<ul>
+						<li><p></p></li>
+						<li><a href="https://app.tutanota.com/#box">tutanota</a></li>
+						<li><a href="https://mail.cock.li/?_task=mail&_mbox=INBOX">cock.li</a></li>
+						<li><a href="https://mail.protonmail.com/inbox/">proton</a></li>
+						<li><a href="https://drive.google.com/drive/my-drive">drive</a></li>
+						<li><a href="https://www.google.co.uk/docs/about/">docs</a></li>
+					</ul>
+				</div>
+
+				<div class="favorites-list">
+					<ul>
+						<li><p></p></li>
+						<li><a href="https://youtube.com">youtube</a></li>
+						<li><a href="https://duolingo.com">duolingo</a></li>
+						<li><a href="https://github.com/">github</a></li>
+						<li><a href="https://reddit.com/r/unixporn">unix</a></li>
+						<li><a href="http://boards.4chan.org/g/">/g/</a></li>
+					</ul>
+				</div>
+
+				<div class="favorites-list">
+					<ul>
+						<li><p></p></li>
+						<li><a href="https://myanimelist.net/animelist/Shiimo">mal</a></li>
+						<li><a href="https://anilist.co/user/Shiimo/animelist">anilist</a></li>
+						<li><a href="http://horriblesubs.info/">horrible subs</a></li>
+						<li><a href="https://bakabt.me/">bakabt</a></li>
+						<li><a href="https://nyaa.pantsu.cat/">nyaa</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="search">
+				<form method="get" action="https://google.co.uk/">
+					<input class="search-box" name="q" placeholder="search" type="text">
+				</form>
+			</div>
+
+		</div>
+
+
+	</body>
+</html>
