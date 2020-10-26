@@ -1,5 +1,11 @@
+:root {
+	--bg: #21242b;
+	--fg: #bfc1c0b3;
+	--hl: #6e6e6e8f;
+}
+
 html {
-	font-family: sans-serif;
+	font-family: 'CMU Serif';
 	font-size: 16px;
 	width: 100vw;
 	height: 100vh;
@@ -9,8 +15,8 @@ body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	background-color: #222222;
-	color: #b5b5a4;
+	background-color: var(--bg);
+	color: var(--fg);
 }
 
 .container {
@@ -36,16 +42,17 @@ body {
 .search {
 	width: 30rem;
 	padding: 0.5rem;
-	border: 1px solid #b5b5a4;
+	border: 1px solid var(--hl);
 }
 
 .search-box {
 	width: 100%;
 	margin: auto;
 	padding: 0;
-	background-color: rgba(0, 0, 0, 0);
-	color: #b5b5a4;
+	background-color: transparent;
+	color: var(--hl);
 	border: none;
+	font-family: 'CMU Typewriter Text';
 }
 
 .search-box:focus {
@@ -55,19 +62,22 @@ body {
 ul {
 	list-style: none;
 	padding: 0;
+	font-family: 'CMU Typewriter Text';
+/* 	font-style: italic; */
 }
 
 ul > li > p {
 	font-weight: bold;
 	text-align: left;
-	border-bottom: 1px solid #b5b5a4;
+	border-bottom: 1px solid var(--hl);
 	padding-right: 100%;
+	margin: 0;
 }
 
 ul > li > a {
-	color: #b5b5a4;
+	color: #bfc1c0b3;
 	outline: none;
-
+	background-color: #4545450f;
 	display: block;
 	text-decoration: none;
 	text-align: center;
@@ -75,8 +85,8 @@ ul > li > a {
 }
 
 ul > li > a:hover {
-	color: #222222;
-	background-color: #b5b5a4;
+	color: #202d39;
+	background-color: #ffffff61;
 }
 
 /* webkit compat */
@@ -90,8 +100,4 @@ ul > li > a:hover {
 .favorites {
 	display: -webkit-flex;
 	-webkit-flex-direction: row;
-}
-.time {
-	font-size: 32pt;
-	font-family: cursive;
 }
