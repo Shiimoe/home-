@@ -1,5 +1,6 @@
 :root {
 	--bg: #21242b;
+	--hbg: #4545450f;
 	--fg: #bfc1c0b3;
 	--hl: #6e6e6e8f;
 }
@@ -17,6 +18,17 @@ body {
 	margin: 0;
 	background-color: var(--bg);
 	color: var(--fg);
+}
+
+.tzOffs {
+	opacity: 0.4;
+	font-size: 1.3rem;
+	font-family: 'CMU Typewriter Text';
+	margin-left: 6pt;
+}
+
+#time {
+	font-size: 3.5rem;
 }
 
 .container {
@@ -41,14 +53,17 @@ body {
 
 .search {
 	width: 30rem;
-	padding: 0.5rem;
-	border: 1px solid var(--hl);
+	padding: 0;
+	/*border: 1px solid var(--hl);
+	border-radius: 2pt;*/
+	background: var(--hbg);
+	border-top: 1pt solid var(--hl);
 }
 
 .search-box {
 	width: 100%;
 	margin: auto;
-	padding: 0;
+	padding: 0.8em 0.7em;
 	background-color: transparent;
 	color: var(--hl);
 	border: none;
@@ -77,7 +92,7 @@ ul > li > p {
 ul > li > a {
 	color: #bfc1c0b3;
 	outline: none;
-	background-color: #4545450f;
+	background-color: var(--hbg);
 	display: block;
 	text-decoration: none;
 	text-align: center;
