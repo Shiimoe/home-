@@ -1,12 +1,27 @@
 :root {
+	/* Default is dark theme. */
 	--bg: #21242b;
 	--hbg: #4545450f;
 	--fg: #bfc1c0b3;
 	--hl: #6e6e6e8f;
+
+	--monospace: 'CMU Typewriter Text', monospace;
+	--serif: 'CMU Serif', serif;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--fg: #21242b;
+		--bg: #d6dbdf;
+	}
+}
+
+* {
+	box-sizing: border-box;
 }
 
 html {
-	font-family: 'CMU Serif';
+	font-family: var(--serif);
 	font-size: 16px;
 	width: 100vw;
 	height: 100vh;
@@ -23,7 +38,7 @@ body {
 .tzOffs {
 	opacity: 0.4;
 	font-size: 1.3rem;
-	font-family: 'CMU Typewriter Text';
+	font-family: var(--monospace);
 	margin-left: 6pt;
 }
 
@@ -60,25 +75,27 @@ body {
 	border-top: 1pt solid var(--hl);
 }
 
-.search-box {
+#search-box {
 	width: 100%;
-	margin: auto;
 	padding: 0.8em 0.7em;
 	background-color: transparent;
 	color: var(--hl);
 	border: none;
-	font-family: 'CMU Typewriter Text';
+	font-family: var(--monospace);
 }
 
-.search-box:focus {
-	outline: none;
+#search-box:focus {
+	color: #939393;
+	background-color: #fff1;
+	outline: 1pt solid #fff3;
+	box-shadow: 0 0 10pt #fff3;
 }
 
 ul {
 	list-style: none;
 	padding: 0;
-	font-family: 'CMU Typewriter Text';
-/* 	font-style: italic; */
+	font-family: var(--monospace);
+	/* font-style: italic; */
 }
 
 ul > li > p {
@@ -90,18 +107,26 @@ ul > li > p {
 }
 
 ul > li > a {
-	color: #bfc1c0b3;
+	color: var(--fg);
 	outline: none;
 	background-color: var(--hbg);
 	display: block;
 	text-decoration: none;
 	text-align: center;
 	padding: 0.5rem;
+	transition: all .05s ease;
 }
 
 ul > li > a:hover {
 	color: #202d39;
 	background-color: #ffffff61;
+}
+
+ul > li > a:focus {
+	color: #202d39;
+	background-color: #fff4;
+	outline: 1pt solid #fff4;
+	box-shadow: 0 0 10pt #fff3;
 }
 
 /* webkit compat */

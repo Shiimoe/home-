@@ -1,41 +1,14 @@
 <!DOCTYPE html>
-<html>
-	<head lang="en">
+<html lang="en">
+	<head profile="http://www.w3.org/2005/10/profile">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<title>home~</title>
-		<link rel="stylesheet" href="style.css">
 		<meta charset="utf-8">
-		<script type="text/javascript">
-			const leftPad = (s, n, ch) => {
-				s = '' + s  // Ensure s is a string.
-				if (s.length >= n) return s;
-				return [...new Array(n - s.length)].map(_ => ch).join('') + s;
-			}
-
-			const now = new Date();
-			let tzOffs = now.getTimezoneOffset();
-			tzOffs = leftPad(tzOffs, 4, '0');
-
-			const startTime = () => {
-				const today = new Date();
-				const h = today.getHours();
-				let m = today.getMinutes();
-				let s = today.getSeconds();
-				// Add a zero in front of numbers <10.
-				m = leftPad(m, 2, '0');
-				s = leftPad(s, 2, '0');
-				
-				const timeElem = document.getElementById('time')
-				timeElem.innerHTML = '<span class="hour">' + h + '</span>'
-					+ ":" + '<span class="min">' + m + '</span>'
-					+ ":" + '<span class="sec">' + s + '</span>'
-					+ '<span class="tzOffs">GMT+' + tzOffs + '</span>';
-				t = setTimeout(startTime, 500); // Refresh every 0.5s.
-			}
-
-			// Start on page load.
-			document.addEventListener("DOMContentLoaded", startTime);	
-		</script>
+		<!-- Made by Shimo (Shiimoe) <samuelfrost@tuta.io> -->
+		<title>~</title>
+		<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAEUlEQVR42mNkIAAYRxWMJAUAE5gAEdz4t9QAAAAASUVORK5CYII=">
+		<link rel="stylesheet" href="./style.css">
+		<script type="text/javascript" src="./script.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -44,38 +17,39 @@
 				<div class="favorites-list">
 					<ul>
 						<li><p></p></li>
-						<li><a href="https://mail.tutanota.com/">tutanota</a></li>
+						<li><a href="https://sr.ht/">sr.ht</a></li>
 						<li><a href="https://www.office.com">office</a></li>
-						<li><a href="https://mail.cock.li/?_task=mail&_mbox=INBOX">cock.li</a></li>
-						<li><a href="https://mail.protonmail.com/inbox/">proton</a></li>
+						<li><a href="https://github.com/">github</a></li>
+						<li><a href="https://code.knutsen.co/">code</a></li>
 						<li><a href="https://drive.google.com/drive/my-drive">drive</a></li>
 					</ul>
 				</div>
 				<div class="favorites-list">
 					<ul>
 						<li><p></p></li>
-						<li><a href="https://youtube.com">youtube</a></li>
-						<li><a href="https://amazon.co.uk/">amazon</a></li>
+						<li><a href="https://odysee.com/">odysee</a></li>
+						<li><a href="https://startpage.com/">search</a></li>
 						<li><a href="https://ebay.co.uk">ebay</a></li>
-						<li><a href="http://911tabs.com">tabs</a></li>
-						<li><a href="http://boards.4chan.org/lit/">/lit/</a></li>
+						<li><a href="http://boards.4chan.org/g/">/g/</a></li>
+						<li><a href="http://boards.4chan.org/his/">/his/</a></li>
 					</ul>
 				</div>
 				<div class="favorites-list">
 					<ul>
 						<li><p></p></li>
-						<li><a href="https://myanimelist.net/animelist/Shiimo">mal</a></li>
-						<li><a href="https://anilist.co/user/Shiimo/animelist">anilist</a></li>
-						<li><a href="http://horriblesubs.info/">horrible subs</a></li>
-						<li><a href="https://bakabt.me/">bakabt</a></li>
-						<li><a href="https://nyaa.si/">nyaa</a></li>
+						<li><a href="https://en.wikipedia.org/wiki/Pro-form">pro-form</a></li>
+						<li><a href="https://www.cplusplus.com/reference/">cppref</a></li>
+						<li><a href="https://hoogle.haskell.org/">hoogle</a></li>
+						<li><a href="https://libgen.is/">libgen</a></li>
+						<li><a href="https://sci-hub.se/">scihub</a></li>
 					</ul>
 				</div>
 			</div>
 
 			<div class="search">
 				<form method="get" action="https://www.startpage.com/do/dsearch">
-					<input class="search-box" name="query" placeholder="search" type="text">
+					<input autofocus="true" id="search-box" name="query"
+					       placeholder="search" type="text">
 				</form>
 			</div>
 		</div>
