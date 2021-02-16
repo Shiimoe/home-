@@ -55,8 +55,6 @@ const focusByIndex = (x, y) =>
 // Use vim-keys or arrow keys to navigate.
 // Also allow number-keys to select column.
 document.addEventListener("keydown", event => {
-	console.log(`Keypress Code: ${event.code}.`);
-
 	if (event.code == "Escape") {
 		if (searchBox !== document.activeElement) {
 			searchBox.focus();
@@ -72,6 +70,9 @@ document.addEventListener("keydown", event => {
 		}
 		return;
 	}
+
+	if (firstPress && getRows(columns[0])[0] == document.activeElement)
+		firstPress = false;
 
 	switch (event.code) {
 	case "KeyH":
