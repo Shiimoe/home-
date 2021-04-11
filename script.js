@@ -5,11 +5,19 @@ const leftPad = (s, n, ch) => {
 };
 
 const now = new Date();
-let tzOffs = now.getTimezoneOffset();
-tzOffs = [...leftPad(tzOffs, 4, '0')];
-tzOffs.splice(2, 0, ":");
-tzOffs = tzOffs.join('');
-const tzHTML = '<span class="tzOffs">GMT+' + tzOffs + '</span>'
+const tzOffs = now.getTimezoneOffset();
+const tzDiff = Math.abs(tzOffs);
+const [tzHours, tzMinutes] = [Math.trunc(tzDiff / 60), tzDiff % 60];
+let tzString = [...leftPad(tzHours, 2, '0'), ...leftPad(tzMinutes, 2, '0')];
+tzString.splice(2, 0, ":");
+tzString = tzString.join('');
+const tzHTML = [
+	'<span class="tzOffs">GMT',
+	tzOffs > 0 ? '-' : '+',
+	tzString, '</span>'
+].join('');
+
+console.log(tzHTML);
 
 let timeElem = null;  // Wait for DOM load.
 
